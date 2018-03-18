@@ -9,7 +9,7 @@ class Dgtal < Formula
 
   bottle :disable, "needs to be rebuilt with latest boost"
 
-  option "without-test", "Skip build-time tests"
+  option "with-test", "Build the unitary tests"
   option "without-examples", "Don't build the examples"
 
   deprecated_option "with-eigen@3.2" => "with-eigen"
@@ -38,8 +38,8 @@ class Dgtal < Formula
   def install
     ENV.cxx11
     args = std_cmake_args
-    args << "-DBUILD_TESTING=OFF" if build.with? "test"
-    args << "-DBUILD_EXAMPLES=ON" if build.without? "examples"
+    args << "-DBUILD_TESTING=ON" if build.with? "test"
+    args << "-DBUILD_EXAMPLES=OFF" if build.without? "examples"
     args << "-DWITH_EIGEN=true" if build.with? "eigen"
     args << "-DWITH_GMP=true" if build.with? "gmp"
     args << "-DWITH_CAIRO=true" if build.with? "cairo"
