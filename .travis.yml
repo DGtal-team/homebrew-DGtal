@@ -10,5 +10,5 @@ before-script:
 jobs:
   include:
     - script: brew audit dgtal
-    - stage: Checkin
+    - stage: Checking the build
       script: brew install dgtal ; brew test dgtal
