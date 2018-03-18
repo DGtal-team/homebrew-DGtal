@@ -1,6 +1,6 @@
 # DGtal / Hombrew
 
-This repository contains formulas to build DGtal-team/DGtal on MacOS using homebrew/brew.
+This repository is a [tap](https://docs.brew.sh/Taps) for [homebrew](http://brew.sh) to build Dgtal tools on MacOS.
 
 Simply run:
 
