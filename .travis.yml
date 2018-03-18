@@ -5,6 +5,10 @@ os: osx
 ############
 # Main rules
 ############
-script:
-  - brew tap DGtal-team/DGtal
-  - brew audit dgtal
+before-script:
+      - brew tap DGtal-team/DGtal
+jobs:
+  include:
+    - script: brew audit dgtal
+    - stage: Checkin
+      script: brew install dgtal ; brew test dgtal
