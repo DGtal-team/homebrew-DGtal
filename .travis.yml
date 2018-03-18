@@ -1,0 +1,12 @@
+language: cpp
+sudo: false
+compiler: clang
+os: osx
+
+############
+# Main rules
+############
+script:
+  - brew tap DGtal-team/DGtal
+  - brew install boost
+  - brew install dgtal
