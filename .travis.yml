@@ -9,6 +9,7 @@ before-script:
       - brew tap DGtal-team/DGtal
 jobs:
   include:
-    - script: brew audit dgtal
+    - stage: Checking the formula
+      script: brew audit dgtal
     - stage: Checking the build
       script: brew install dgtal ; brew test dgtal
