@@ -5,7 +5,7 @@ os: osx
 ############
 # Main rules
 ############
-before-script:
+before_script:
       - brew tap DGtal-team/DGtal
 jobs:
   include:
