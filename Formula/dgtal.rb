@@ -1,10 +1,9 @@
 class Dgtal < Formula
   desc "Digital Geometry Tools and Algorithms"
-  homepage "http://dgtal.org/"
-  url "http://dgtal.org/releases/DGtal-0.9.3-Source.tar.gz"
-  mirror "https://liris.cnrs.fr/dgtal/releases/DGtal-0.9.3-Source.tar.gz"
+  homepage "https://dgtal.org/"
+  url "https://dgtal.org/releases/DGtal-0.9.4b.tar.gz"
   sha256 "6ade39b5bf12b8da9b26df340830136d423fc4558b51ae5608cdac40e0fc1744"
-  revision 2
+  revision 1
   head "https://github.com/DGtal-team/DGtal.git"
 
   bottle :disable, "needs to be rebuilt with latest boost"
