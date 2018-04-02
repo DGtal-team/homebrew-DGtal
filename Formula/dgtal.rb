@@ -1,8 +1,8 @@
 class Dgtal < Formula
   desc "Digital Geometry Tools and Algorithms"
   homepage "https://dgtal.org/"
-  url "https://liris.cnrs.fr/dgtal/releases/DGtal-0.9.4b.tar.gz"
-  sha256 "cc5c225dca56f0ab3a9552065a14b2b6c215e13e698972d130da69460f725b60"
+  url "https://liris.cnrs.fr/dgtal/releases/DGtal-0.9.4.1.tar.gz"
+  sha256 "35efa81e4ec05171e19aa5c18e12c8efd69a9968bcc939e4e4c26a2518b5365f"
   revision 1
   head "https://github.com/DGtal-team/DGtal.git"
 
@@ -58,22 +58,26 @@ class Dgtal < Formula
   end
 
   test do
-    (testpath/"poly.cpp").write <<-EOS.undent
-      #include "DGtal/io/readers/MPolynomialReader.h"
+    (testpath/"helloworld.cpp").write <<-EOS.undent
+      #include "DGtal/base/Common.h"
+      #include "DGtal/helpers/StdDefs.h"
       using namespace std;
       using namespace DGtal;
       int main() {
         typedef double Ring;
-        MPolynomial<3,Ring,std::allocator<Ring> > P;
-        MPolynomialReader<3,Ring> reader;
-        string str = "xyz^3-4yz";
-        reader.read( P, str.begin(), str.end() );
-        std::cout << P << std::endl;
-        return 0;
+        Z2i::Point a(0,0), b(10,10);
+        Z2i::Domain dom(a,b);
+        if (dom.isInside(Point(2,3)))
+         {
+           std::cout <<"All good."<<std::endl;
+           return 0;
+         }
+        else 
+         return 1;
       }
     EOS
-    system ENV.cxx, "poly.cpp", "-o", "poly", "-lDGtal", "-L#{lib}"
-    output = shell_output("./poly xyz^3-4yz").chomp
-    assert_equal "(-4 X_2 X_1 + 1 X_2^3 X_1 X_0)", output
+    system ENV.cxx, "helloworld.cpp", "-o", "helloworld", "-lDGtal", "-L#{lib}"
+    output = shell_output("./helloworld").chomp
+    assert_equal "All good.", output
   end
 end
