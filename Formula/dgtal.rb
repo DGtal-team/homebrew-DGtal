@@ -1,8 +1,8 @@
 class Dgtal < Formula
   desc "Digital Geometry Tools and Algorithms"
   homepage "https://dgtal.org/"
-  url "https://liris.cnrs.fr/dgtal/releases/DGtal-0.9.4.1.tar.gz"
-  sha256 "35efa81e4ec05171e19aa5c18e12c8efd69a9968bcc939e4e4c26a2518b5365f"
+  url "https://github.com/DGtal-team/DGtal/archive/1.0.tar.gz"
+  sha256 "8a30974631e235b243f2063754c6deb56d56e2b1bcbb1c4dc9a8afadba23d2bc"
   revision 1
   head "https://github.com/DGtal-team/DGtal.git"
 
