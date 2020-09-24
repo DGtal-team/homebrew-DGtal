@@ -35,7 +35,7 @@ class Dgtal < Formula
   def install
     ENV.cxx11
     args = std_cmake_args
-    args << "-DWITH_EXAMPLES=OFF"
+    args << "-DBUILD_EXAMPLES=OFF"
     args << "-DBUILD_TESTING=ON" if build.with? "test"
     args << "-DBUILD_EXAMPLES=ON" if build.with? "examples"
     args << "-DWITH_EIGEN=true" if build.with? "eigen"
