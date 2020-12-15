@@ -6,8 +6,6 @@ class Libqglviewer < Formula
 
   head "https://github.com/GillesDebunne/libQGLViewer.git"
 
-  option :universal
-
   depends_on "qt5"
 
   def install
