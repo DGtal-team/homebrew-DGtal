@@ -13,8 +13,6 @@ class Libqglviewer < Formula
       PREFIX=#{prefix}
       DOC_DIR=#{doc}
     ]
-    args << "CONFIG += x86 x86_64" if build.universal?
-
     cd "QGLViewer" do
       system "qmake", *args
       system "make", "install"
